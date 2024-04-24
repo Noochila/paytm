@@ -19,7 +19,7 @@ export default function Dashboard() {
 
     const fetchUserData = useCallback(async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/v1/user/me", {
+            const response = await axios.get("https://paytm-9qy0.onrender.com/api/v1/user/me", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -37,7 +37,7 @@ export default function Dashboard() {
 
     const fetchUserBalance = useCallback(async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/v1/account/balance", {
+            const response = await axios.get("https://paytm-9qy0.onrender.com/api/v1/account/balance", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            let url = `http://localhost:3000/api/v1/user/bulk`;
+            let url = `https://paytm-9qy0.onrender.com/api/v1/user/bulk`;
             if (query) url += `?filter=${query}`;
             try {
                 const response = await axios.get(url, {

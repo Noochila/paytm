@@ -34,7 +34,7 @@ export default function SendMoney() {
                     <Button label="Send" onclick={() => {
                         const sendMoney = async () => {
                             try {
-                                const response = await axios.post("http://localhost:3000/api/v1/account/transfer", {
+                                const response = await axios.post("https://paytm-9qy0.onrender.com/api/v1/account/transfer", {
                                     to,
                                     amount: amount
                                 }, {
