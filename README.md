@@ -12,7 +12,7 @@ To install the project, follow these steps:
 
 2. For the backend:
    - Run `npm install` in the `backend` directory.
-   - Use `npm start` to start the backend server.
+   - Use `node index.js` to start the backend server.
 
 ### Endpoints:
 - Frontend:
