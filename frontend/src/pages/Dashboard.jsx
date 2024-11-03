@@ -37,7 +37,7 @@ export default function Dashboard() {
 
     const fetchUserBalance = useCallback(async () => {
         try {
-            const response = await axios.get(PROCESS.env.BACKEND_URL++"/api/v1/account/balance", {
+            const response = await axios.get(PROCESS.env.BACKEND_URL+"/api/v1/account/balance", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
