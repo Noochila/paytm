@@ -7,6 +7,8 @@ import Button from "../Components/Button"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
+import {BACKEND_URL} from "../../config"
+
 
 
 export default function Update() {
@@ -40,7 +42,7 @@ export default function Update() {
                     requestBody.lastName = lastName;
                 }
 
-                const response = await axios.put(PROCESS.env.BACKEND_URL+"/api/v1/user/update", requestBody, {
+                const response = await axios.put(BACKEND_URL+"/api/v1/user/update", requestBody, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }

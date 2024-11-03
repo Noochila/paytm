@@ -7,6 +7,7 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Round from "../Components/Round";
+import {BACKEND_URL} from "../../config"
 /* eslint-disable react/prop-types */
 export default function SendMoney() {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function SendMoney() {
                     <Button label="Send" onclick={() => {
                         const sendMoney = async () => {
                             try {
-                                const response = await axios.post(PROCESS.env.BACKEND_URL+"/api/v1/account/transfer", {
+                                const response = await axios.post(BACKEND_URL+"/api/v1/account/transfer", {
                                     to,
                                     amount: amount
                                 }, {

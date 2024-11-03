@@ -7,6 +7,7 @@ import BottomWarning from "../Components/BottomWarning"
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import {BACKEND_URL} from "../../config"
 
 export default function Signup() {
     const [username, setUserName] = useState("")
@@ -39,7 +40,7 @@ export default function Signup() {
             <Button onclick={async () => {
 
                 try {
-                    const response = await axios.post(PROCESS.env.BACKEND_URL+"/api/v1/user/signup", {
+                    const response = await axios.post(BACKEND_URL+"/api/v1/user/signup", {
                         username,
                         email,
                         password,

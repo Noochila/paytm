@@ -6,6 +6,8 @@ import Balance from "../Components/Balance"
 import Heading from "../Components/Heading";
 import InputBox from "../Components/InputBox";
 import Users from "../Components/Users";
+import {BACKEND_URL} from "../../config"
+
 
 
 // eslint-disable-next-line react/prop-types
@@ -19,7 +21,7 @@ export default function Dashboard() {
 
     const fetchUserData = useCallback(async () => {
         try {
-            const response = await axios.get(PROCESS.env.BACKEND_URL+"/api/v1/user/me", {
+            const response = await axios.get(BACKEND_URL+"/api/v1/user/me", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -37,7 +39,7 @@ export default function Dashboard() {
 
     const fetchUserBalance = useCallback(async () => {
         try {
-            const response = await axios.get(PROCESS.env.BACKEND_URL+"/api/v1/account/balance", {
+            const response = await axios.get(BACKEND_URL+"/api/v1/account/balance", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -61,7 +63,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            let url = PROCESS.env.BACKEND_URL+`/api/v1/user/bulk`;
+            let url = BACKEND_URL+`/api/v1/user/bulk`;
             if (query) url += `?filter=${query}`;
             try {
                 const response = await axios.get(url, {
