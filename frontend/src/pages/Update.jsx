@@ -40,7 +40,7 @@ export default function Update() {
                     requestBody.lastName = lastName;
                 }
 
-                const response = await axios.put("https://paytm-9qy0.onrender.com/api/v1/user/update", requestBody, {
+                const response = await axios.put(PROCESS.env.BACKEND_URL+"/api/v1/user/update", requestBody, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
